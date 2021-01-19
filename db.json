@@ -41,6 +41,30 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "hydrangea",
+      "image": "https://gilmour.com/wp-content/uploads/2018/03/hydrangea-care.jpg",
+      "price": "25",
+      "id": 8
+    },
+    {
+      "name": "Lilly",
+      "image": "https://s3.amazonaws.com/cdn.brecks.com/images/800/73689A.jpg",
+      "price": "15",
+      "id": 9
+    },
+    {
+      "name": "New Lilly ",
+      "image": "https://www.almanac.com/sites/default/files/image_nodes/oriental-lily.jpg",
+      "price": "25",
+      "id": 10
+    },
+    {
+      "name": "Rose",
+      "image": "https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "price": 12,
+      "id": 11
     }
   ]
 }
