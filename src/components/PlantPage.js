@@ -47,13 +47,45 @@ function PlantPage() {
       })
   }
 
+  const onPriceChange = (updatedPlant, newPrice) => {
+    // console.log(plant, newPrice)
+    let intPrice = parseInt(newPrice)
+
+    let formObject = {
+    price: intPrice,
+    }
+
+    fetch(`${plantsUrl}/${updatedPlant.id}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(formObject)
+    })
+      .then(r => r.json())
+      .then(fetchPlant => console.log(fetchPlant))
+  }
+
+  const onDelete = (deletedPlant) => {
+
+    fetch(`${plantsUrl}/${deletedPlant.id}`, {
+      method: 'DELETE'
+    })
+      .then(r => r.json())
+      .then(d => console.log(d))
+
+    const updatedPlantArr = plants.filter(plant => {
+      return plant.id !== deletedPlant.id
+    })
+
+    setPlants(updatedPlantArr)
+  }
+
 
   return (
    
     <main>
       <NewPlantForm onSubmit={onSubmit} />
       <Search search={search} setSearch={setSearch}/>
-      <PlantList search={search} plants={plants} handleClick={handleClick} />
+      <PlantList onDelete={onDelete} onPriceChange={onPriceChange} search={search} plants={plants} handleClick={handleClick} />
     </main>
   );
 }
